@@ -1,6 +1,7 @@
 <style>
-
-  * { box-sizing: border-box; }
+  * {
+    box-sizing: border-box;
+  }
 
   body {
     display: flex;
@@ -16,29 +17,598 @@
     height: 500px;
     border: 1px dashed;
   }
-  
-  .kettle {
+
+  .spout {
+    position: absolute;
+    background-color: #FF5A0D;
+    width: 40px;
+    height: 50px;
+    clip-path: polygon(100% 0, 0 0, 100% 100%);
+    transform: translate(2px, 79px) rotate(-.02turn);
+  }
+
+  .handleblack {
+    position: absolute;
+    background-color: black;
+    width: 180px;
+    height: 200px;
+    clip-path: polygon(66% 0, 91% 50%, 91% 100%, 51% 100%, 51% 54%, 29% 0);
+    transform: translate(227px, 67px) rotate(-.06turn);
+  }
+
+
+
+  .firststripekettle {
+    position: absolute;
+    background: linear-gradient(92deg,rgba(255, 90, 13, 1) 0%, rgba(222, 52, 9, 1) 50%, rgba(179, 36, 7, 1) 100%);
+    width: 60px;
+    height: 190px;
+    transform: translate(-225px, 43px) rotate(-.03turn);
+    clip-path: polygon(20% 0%, 80% 0%, 80% 100%, 20% 100%);
+  }
+
+  .secondstripekettle {
+    position: absolute;
+    background: linear-gradient(92deg,rgba(179, 36, 7, 1) 0%, rgba(222, 52, 9, 1) 25%, rgba(255, 90, 13, 1) 50%, rgba(222, 52, 9, 1) 75%, rgba(179, 36, 7, 1) 100%);
+    width: 120px;
+    height: 195px;
+    transform: translate(-217px, 40px) rotate(-.001turn);
+    clip-path: polygon(20% 0%, 80% 0%, 80% 100%, 20% 100%);
+  }
+
+  .thirdstripekettle {
+    position: absolute;
+    background: linear-gradient(92deg,rgba(179, 36, 7, 1) 0%, rgba(222, 52, 9, 1) 25%, rgba(255, 90, 13, 1) 50%, rgba(222, 52, 9, 1) 75%, rgba(179, 36, 7, 1) 100%);;
+    width: 120px;
+    height: 195px;
+    transform: translate(-146px, 40px) rotate(-.001turn);
+    clip-path: polygon(20% 0%, 80% 0%, 80% 100%, 20% 100%);
+  }
+
+  .fourthstripekettle {
+    position: absolute;
+    background: linear-gradient(92deg,rgba(179, 36, 7, 1) 0%, rgba(222, 52, 9, 1) 25%, rgba(255, 90, 13, 1) 50%, rgba(222, 52, 9, 1) 75%, rgba(179, 36, 7, 1) 100%);;
+    width: 120px;
+    height: 195px;
+    transform: translate(-80px, 40px) rotate(-.001turn);
+    clip-path: polygon(20% 0%, 80% 0%, 80% 100%, 20% 100%);
+  }
+
+  .kettleroundbottom {
+    position: absolute;
+    background: linear-gradient(92deg,rgba(222, 52, 9, 1) 0%, rgba(255, 90, 13, 1) 50%, rgba(222, 52, 9, 1) 100%);
+    width: 230px;
+    height: 90px;
+    filter: blur(20px);
+    transform: translate(-230px, -10px);
+    clip-path: ellipse(50% 34% at 50% 50%);
+  }
+
+  .kettletopshine {
+    position: absolute;
+    background: white;
+    width: 250px;
+    height: 90px;
+    transform: translate(-240px, -13px);
+    clip-path: ellipse(50% 34% at 50% 50%);
+  }
+
+  .kettleroundtop {
+    position: absolute;
+    background: linear-gradient(92deg,rgba(222, 52, 9, 1) 0%, rgba(255, 90, 13, 1) 50%, rgba(222, 52, 9, 1) 100%);
+    width: 250px;
+    height: 90px;
+    transform: translate(-240px, -30px);
+    clip-path: ellipse(50% 34% at 50% 50%);
+  }
+
+
+  .handleorange {
+    position: absolute;
     background-color: #FF5D00;
+    width: 50px;
+    height: 50px;
+    transform: translate(270px, 60px);
+  }
+
+
+  .kettlemiddle {
+    position: absolute;
+    background-color: #FF5D00;
+    background: linear-gradient(180deg,rgba(161, 21, 6, 1) 0%, rgba(222, 52, 9, 1) 50%, rgba(255, 90, 13, 1) 100%);
+    width: 175px;
+    height: 50px;
+    transform: translate(67px, 230px);
+  }
+
+  .kettlesilver {
+    position: absolute;
+    background: linear-gradient(13deg, rgba(0, 0, 0, 1) 0%, rgba(79, 77, 77, 1) 23%, rgba(99, 97, 97, 1) 50%, rgba(232, 232, 232, 1) 100%);
+    width: 250px;
+    height: 150px;
+    border-radius: 40px;
+    transform: translate(30px, 270px);
+    clip-path: polygon(15% 0, 85% 0, 100% 100%, 0% 100%);
+  }
+
+  .kettlesilvertopshine {
+    position: absolute;
+    width: 100px;
+    height: 10px;
+    filter: blur(5px);
+    background: white;
+    transform: translate(80px, 270px);
+  }
+
+  .kettlesilversideshine {
+    position: absolute;
+    width: 20px;
+    height: 140px;
+    filter: blur(5px);
+    background: white;
+    transform: translate(120px, 280px);
+  }
+
+  .kettlesilverbottomshine {
+    position: absolute;
+    width: 80px;
+    height: 10px;
+    filter: blur(5px);
+    background: white;
+    transform: translate(50px, 413px);
+  }
+
+  .kettletop {
+    position: absolute;
+    background-color: black;
+    background: linear-gradient(356deg, rgba(0, 0, 0, 1) 0%, rgba(64, 64, 64, 1) 50%, rgba(143, 143, 143, 1) 100%);
+    width: 30px;
+    height: 40px;
+    transform: translate(140px, 10px);
     clip-path: polygon(0 0, 100% 0, 85% 100%, 15% 100%);
   }
 
+  .cups {
+    position: absolute;
+    background: linear-gradient(92deg, rgba(173, 191, 204, 1) 0%, rgba(223, 233, 235, 1) 50%, rgba(247, 251, 252, 1) 100%);
+    width: 90px;
+    height: 190px;
+    border-radius: 20px;
+    transform: translate(130px, 250px);
+  }
+
+  .cupsstripeone {
+    position: absolute;
+    background: linear-gradient(92deg, rgba(8, 27, 82, 1) 0%, rgba(24, 47, 112, 1) 50%, rgba(41, 70, 158, 1) 100%);
+    width: 90px;
+    height: 15px;
+    transform: translate(130px, 265px);
+  }
+
+  .cupsstripetwo {
+    position: absolute;
+    background: linear-gradient(92deg, rgba(8, 27, 82, 1) 0%, rgba(24, 47, 112, 1) 50%, rgba(41, 70, 158, 1) 100%);
+    width: 90px;
+    height: 15px;
+    transform: translate(130px, 290px);
+  }
+
+  .cupsstripethree {
+    position: absolute;
+    background: linear-gradient(92deg, rgba(8, 27, 82, 1) 0%, rgba(24, 47, 112, 1) 50%, rgba(41, 70, 158, 1) 100%);
+    width: 90px;
+    height: 15px;
+    transform: translate(130px, 320px);
+  }
+
+  .cupsstripefour {
+    position: absolute;
+    background: linear-gradient(92deg, rgba(8, 27, 82, 1) 0%, rgba(24, 47, 112, 1) 50%, rgba(41, 70, 158, 1) 100%);
+    width: 90px;
+    height: 15px;
+    transform: translate(130px, 350px);
+  }
+
+  .cupsstripefive {
+    position: absolute;
+    background: linear-gradient(92deg, rgba(8, 27, 82, 1) 0%, rgba(24, 47, 112, 1) 50%, rgba(41, 70, 158, 1) 100%);
+    width: 90px;
+    height: 15px;
+    transform: translate(130px, 380px);
+  }
+
+  .cupsstripesix {
+    position: absolute;
+    background: linear-gradient(92deg, rgba(8, 27, 82, 1) 0%, rgba(24, 47, 112, 1) 50%, rgba(41, 70, 158, 1) 100%);
+    width: 90px;
+    height: 15px;
+    transform: translate(130px, 410px);
+  }
+
+
+  .backcoffee {
+    position: absolute;
+    background: linear-gradient(266deg,rgba(252, 200, 68, 1) 0%, rgba(255, 228, 77, 1) 50%, rgba(252, 200, 68, 1) 100%);
+    border-radius: 30px;
+    width: 260px;
+    height: 290px;
+    transform: translate(240px, 145px) scale(0.9);
+    overflow: hidden;
+  }
+  
+  .backcoffee p {
+    font-family: Georgia, serif;
+    color: #0D124F;
+    font-size: 42px;
+    transform: translate(200px, 25px) rotate(-.01turn);
+    overflow: hidden;
+  }
+
+  .silverbackcoffee {
+    position: absolute;
+    background: linear-gradient(318deg,rgba(138, 138, 138, 1) 0%, rgba(176, 176, 176, 1) 25%, rgba(227, 227, 227, 1) 50%, rgba(176, 176, 176, 1) 75%, rgba(138, 138, 138, 1) 100%);
+    clip-path: ellipse(50% 20% at 50% 50%);
+    width: 260px;
+    height: 200px;
+    transform: translate(238px, 310px) scale(0.9);
+  }
+  
+  .redstriperoundback{
+    position: absolute;
+    background: linear-gradient(318deg,rgba(158, 19, 35, 1) 0%, rgba(227, 36, 36, 1) 50%, rgba(158, 19, 35, 1) 100%);
+    clip-path: ellipse(50% 13% at 50% 50%);
+    width: 260px;
+    height: 160px;
+    transform: translate(238px, 330px) scale(0.9);
+  }
+  
+
+  .redstripebackcoffee {
+    position: absolute;
+    background: linear-gradient(318deg,rgba(158, 19, 35, 1) 0%, rgba(227, 36, 36, 1) 50%, rgba(158, 19, 35, 1) 100%);
+    border-radius: 10px;
+    width: 260px;
+    height: 100px;
+    transform: translate(240px, 320px) scale(0.9);
+  }
+  
+  .yellowroundback{
+    position: absolute;
+    background: linear-gradient(266deg,rgba(252, 200, 68, 1) 0%, rgba(255, 228, 77, 1) 50%, rgba(252, 200, 68, 1) 100%);
+    clip-path: ellipse(50% 13% at 50% 50%);
+    width: 260px;
+    height: 160px;
+    transform: translate(240px, 250px) scale(0.9);
+  }
+  
+  .backcoffeelidside {
+    position: absolute;
+    background: linear-gradient(90deg,rgba(230, 199, 85, 1) 0%, rgba(230, 199, 85, 1) 25%, rgba(255, 248, 125, 1) 50%, rgba(230, 199, 85, 1) 75%, rgba(230, 199, 85, 1) 100%);
+    clip-path: ellipse(50% 13% at 50% 50%);
+    width: 280px;
+    height: 210px;
+    transform: translate(225px, 80px) scale(0.9);
+  }
+
+  .backcoffeelid {
+    position: absolute;
+    background: radial-gradient(circle,rgba(255, 248, 125, 1) 0%, rgba(230, 199, 85, 1) 50%, rgba(224, 160, 56, 1) 100%);
+    border-radius: 10px;
+    clip-path: ellipse(50% 13% at 50% 50%);
+    width: 260px;
+    height: 160px;
+    transform: translate(240px, 91px) scale(0.9);
+  }
+
+  .frontcoffee {
+    position: absolute;
+    background: linear-gradient(266deg,rgba(252, 200, 68, 1) 0%, rgba(255, 228, 77, 1) 50%, rgba(252, 200, 68, 1) 100%);
+    border-radius: 30px;
+    width: 260px;
+    height: 270px;
+    transform: translate(170px, 190px);
+  }
+  
+  .silverfrontcoffee {
+    position: absolute;
+    background: linear-gradient(86deg,rgba(138, 138, 138, 1) 0%, rgba(176, 176, 176, 1) 25%, rgba(227, 227, 227, 1) 50%, rgba(176, 176, 176, 1) 75%, rgba(138, 138, 138, 1) 100%);
+    clip-path: ellipse(50% 20% at 50% 50%);
+    width: 260px;
+    height: 200px;
+    transform: translate(0px, 160px);
+  }
+  
+  .redstriperoundfront{
+    position: absolute;
+    background: linear-gradient(318deg,rgba(158, 19, 35, 1) 0%, rgba(227, 36, 36, 1) 50%, rgba(158, 19, 35, 1) 100%);
+    clip-path: ellipse(50% 13% at 50% 50%);
+    width: 260px;
+    height: 160px;
+    transform: translate(0px, 185px);
+  }
+  
+  .redstripefrontcoffee {
+    position: absolute;
+    background: linear-gradient(318deg,rgba(158, 19, 35, 1) 0%, rgba(227, 36, 36, 1) 50%, rgba(158, 19, 35, 1) 100%);
+    border-radius: 10px;
+    width: 260px;
+    height: 100px;
+    transform: translate(0px, 170px);
+  }
+  
+  .yellowroundfront{
+    position: absolute;
+    background: linear-gradient(266deg,rgba(252, 200, 68, 1) 0%, rgba(255, 228, 77, 1) 50%, rgba(252, 200, 68, 1) 100%);
+    clip-path: ellipse(50% 13% at 50% 50%);
+    width: 260px;
+    height: 160px;
+    transform: translate(0px, 95px);
+  }
+  
+  .righttext h1{
+    font-family: Georgia, serif;
+    color: #0D124F;
+    font-size: 42px;
+    transform: translate(140px, -150px) rotate(-.01turn);
+    overflow: hidden;
+  }
+  .righttext p{
+    font-family: Georgia, serif;
+    color: #0D124F;
+    font-size: 15px;
+    transform: translate(163px, -175px) rotate(-.01turn);
+    overflow: hidden;
+  }
+  .lefttext h1{ 
+    font-family: Georgia, serif;
+    color: #0D124F;
+    font-size: 42px;
+    transform: translate(0px, 25px) rotate(.01turn);
+    overflow: hidden;
+  }
+  .lefttext p{
+    font-family: Georgia, serif;
+    color: #0D124F;
+    font-size: 15px;
+    transform: translate(0px, 2px) rotate(.01turn);
+    overflow: hidden;
+  }
+  
+  
+  .coffeelefttriangle {
+    position: absolute;
+    clip-path: polygon(77% 39%, 0% 100%, 100% 100%);
+    background: #0D124F;
+    height: 20px;
+    width: 20px;
+    transform: translate(205px, 260px);
+  }
+  .coffeerighttriangle {
+    position: absolute;
+    clip-path: polygon(77% 39%, 0% 100%, 100% 100%);
+    background: #0D124F;
+    height: 20px;
+    width: 20px;
+    transform: translate(255px, 260px) scaleX(-1);
+  }
+  
+  .coffeemiddleredshape{
+    position: absolute;
+    clip-path: polygon(0 0, 100% 0, 75% 100%, 25% 100%);
+    background: #E32424;
+    transform: translate(220px, 255px);
+    height: 30px;
+    width: 40px;
+  }
+  
+  .frontcoffeelidside {
+    position: absolute;
+    background: linear-gradient(90deg,rgba(230, 199, 85, 1) 0%, rgba(230, 199, 85, 1) 25%, rgba(255, 248, 125, 1) 50%, rgba(230, 199, 85, 1) 75%, rgba(230, 199, 85, 1) 100%);
+    clip-path: ellipse(50% 13% at 50% 50%);
+    width: 280px;
+    height: 210px;
+    transform: translate(160px, 110px);
+  }
+
+  
+  .frontcoffeelid {
+    position: absolute;
+    background: radial-gradient(circle,rgba(255, 248, 125, 1) 0%, rgba(230, 199, 85, 1) 50%, rgba(224, 160, 56, 1) 100%);
+    border-radius: 10px;
+    clip-path: ellipse(50% 13% at 50% 50%);
+    width: 260px;
+    height: 200px;
+    transform: translate(170px, 103px);
+
+  }
+
+  .topcup {
+    position: absolute;
+    background: linear-gradient(92deg, rgba(173, 191, 204, 1) 0%, rgba(223, 233, 235, 1) 50%, rgba(247, 251, 252, 1) 100%);
+    border-radius: 20px;
+    width: 115px;
+    height: 130px;
+    transform: translate(250px, 80px);
+  }
+  
+  .topcupstripeone {
+    position: absolute;
+    background: linear-gradient(92deg, rgba(8, 27, 82, 1) 0%, rgba(24, 47, 112, 1) 50%, rgba(41, 70, 158, 1) 100%);
+    width: 115px;
+    height: 17px;
+    transform: translate(250px, 110px);
+  }
+  
+  .topcupstripetwo {
+    position: absolute;
+    background: linear-gradient(92deg, rgba(8, 27, 82, 1) 0%, rgba(24, 47, 112, 1) 50%, rgba(41, 70, 158, 1) 100%);
+    width: 115px;
+    height: 17px;
+    transform: translate(250px, 145px);
+  }
+  .topcupstripethree {
+    position: absolute;
+    background: linear-gradient(92deg, rgba(8, 27, 82, 1) 0%, rgba(24, 47, 112, 1) 50%, rgba(41, 70, 158, 1) 100%);
+    width: 115px;
+    height: 17px;
+    transform: translate(250px, 180px);
+  }
+  
+  .topcuptriangle{
+    position: absolute;
+    background: linear-gradient(173deg,rgba(128, 0, 0, 1) 0%, rgba(201, 0, 0, 1) 100%);
+    clip-path: polygon(100% 50%, 0 0, 0 99%);
+    width: 70px;
+    height: 80px;
+    transform: translate(250px, 115px);
+  }
+  
+  .cupstar {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(92deg, rgba(173, 191, 204, 1) 0%, rgba(223, 233, 235, 1) 50%, rgba(247, 251, 252, 1) 100%);
+    transform: translate(-10px, 20px);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  }
+  
+  .cupshadow {
+    position: absolute;
+    clip-path: ellipse(50% 7% at 50% 50%);
+    background: #ABB8BA;
+    width: 100px;
+    height: 100px;
+    transform: translate(260px, 45px);
+  }
+  
+  .cuphandle {
+    position: absolute;
+    clip-path: polygon(100% 11%, 70% 2%, 37% 1%, 19% 12%, 1% 27%, 0% 55%, 0% 70%, 23% 100%, 58% 100%, 84% 95%, 100% 89%, 100% 71%, 81% 77%, 59% 78%, 28% 78%, 17% 69%, 15% 55%, 17% 29%, 26% 23%, 40% 14%, 68% 15%, 99% 28%);
+    width: 50px;
+    height: 90px;
+    transform: translate(210px, 100px);
+    background: radial-gradient(circle,rgba(171, 184, 186, 1) 0%, rgba(211, 225, 227, 1) 50%, rgba(247, 255, 255, 1) 100%);
+  }
 </style>
 
 
 <div class="frame">
-  <div class="kettle">
-    
+  <div class="spout">
+  </div>
+  <div class="handleblack">
+  </div>
+  <div class="handleorange">
+    <div class="kettleroundtop">
+    </div>
+    <div class="kettletopshine">
+    </div>
+    <div class="kettleroundbottom">
+    </div>
+    <div class="firststripekettle">
+    </div>
+    <div class="secondstripekettle">
+    </div>
+    <div class="thirdstripekettle">
+    </div>
+    <div class="fourthstripekettle">
+    </div>
+
+  </div>
+  <div class="kettlemiddle">
+  </div>
+  <div class="kettlesilver">
+  </div>
+  <div class="kettlesilvertopshine">
+  </div>
+  <div class="kettlesilversideshine">
+  </div>
+  <div class="kettlesilverbottomshine">
+  </div>
+  <div class="kettletop">
   </div>
   <div class="cups">
-    
+  </div>
+  <div class="cupsstripeone">
+  </div>
+  <div class="cupsstripetwo">
+  </div>
+  <div class="cupsstripethree">
+  </div>
+  <div class="cupsstripefour">
+  </div>
+  <div class="cupsstripefive">
+  </div>
+  <div class="cupsstripesix">
   </div>
   <div class="backcoffee">
-    
+    <P>
+      <b>
+      CA <br>BUS
+      </b>
+    </P>
+  </div>
+  <div class="silverbackcoffee">
+  </div>
+  <div class="redstriperoundback">
+  </div>
+  <div class="redstripebackcoffee">
+  </div>
+  <div class="yellowroundback">
+  </div>
+  <div class="backcoffeelidside">
+  </div>
+  <div class="backcoffeelid">
   </div>
   <div class="frontcoffee">
-    
+  <div class="silverfrontcoffee">
+  </div>
+  <div class="redstriperoundfront">
+  </div>
+  <div class="redstripefrontcoffee">
+  </div>
+  <div class="yellowroundfront">
+  </div>
+  <div class="lefttext">
+    <h1>
+      E <br> ELO
+    </h1>
+    <p>
+      Mollido
+    </p>
+  </div>
+  <div class="righttext">
+    <h1>
+      CAFE<br>BUST
+    </h1>
+    <p>
+      Espresso Gran
+    </p>
+  </div>
+  </div>
+  <div class="coffeelefttriangle">
+  </div>
+  <div class="coffeemiddleredshape">
+  </div>
+  <div class="coffeerighttriangle">
+  </div>
+  <div class="frontcoffeelidside">
+  </div>
+  <div class="frontcoffeelid">
+  </div>
+  <div class="cuphandle">
   </div>
   <div class="topcup">
-    e
+  </div>
+  <div class="topcupstripeone">
+  </div>
+  <div class="topcupstripetwo">
+  </div>
+  <div class="topcupstripethree">
+  </div>
+  <div class="topcuptriangle">
+    <div class="cupstar">
+    </div>
+  </div>
+  <div class="cupshadow">
   </div>
 </div>
